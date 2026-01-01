@@ -1,600 +1,124 @@
-sticky;
-      top: 0;
-      z-index: 20;
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gelivra – Coming Soon</title>
 
-    header img {
-      height: 42px;
-      object-fit: contain;
-    }
-
-    .nav-links a {
-      margin: 0 10px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--text-main);
-    }
-
-    .nav-links a:hover {
-      color: var(--accent-strong);
-    }
-
-    .top-banner {
-      background: linear-gradient(90deg, #ffe6f2, #f1e6ff);
-      color: #5b2c7f;
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial;
+      background: linear-gradient(135deg, #f9e8ff, #f4ecff, #ffffff);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      padding: 8px 12px;
-      font-size: 0.85rem;
+      color: #3d2b4d;
     }
 
-    main {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 20px 16px 60px;
+    .container {
+      max-width: 480px;
+      padding: 30px;
+      background: rgba(255,255,255,0.75);
+      border: 1px solid rgba(210, 170, 255, 0.4);
+      border-radius: 18px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      backdrop-filter: blur(6px);
     }
 
-    .breadcrumb {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      margin-bottom: 6px;
+    .logo {
+      width: 80px;
+      height: auto;
+      margin-bottom: 18px;
     }
 
-    .breadcrumb span {
-      color: var(--accent-strong);
-    }
-
-    .collection-header {
-      margin-top: 8px;
-      margin-bottom: 20px;
-    }
-
-    .collection-title {
-      font-size: 1.9rem;
+    h1 {
+      font-size: 2rem;
       font-weight: 700;
-      margin: 0 0 6px;
-    }
-
-    .collection-subtitle {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      max-width: 620px;
-    }
-
-    .toolbar {
-      margin: 20px 0 24px;
-      padding: 10px 14px;
-      border-radius: 10px;
-      background: var(--bg-soft);
-      border: 1px solid var(--border-soft);
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-      font-size: 0.88rem;
-    }
-
-    .toolbar-left {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .filter-pill {
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--border-soft);
-      background: white;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      cursor: pointer;
-    }
-
-    .filter-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--accent);
-    }
-
-    .toolbar-right select {
-      padding: 6px 8px;
-      border-radius: 6px;
-      border: 1px solid var(--border-soft);
-      background: white;
-      font-size: 0.85rem;
-    }
-
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .product-card {
-      border-radius: 14px;
-      border: 1px solid #f0edf7;
-      background: #ffffff;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
-
-    .product-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.06);
-    }
-
-    .product-image-wrapper {
-      background: #faf7ff;
-      position: relative;
-      padding: 12px;
-    }
-
-    .badge {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      background: var(--accent);
-      color: white;
-      font-size: 0.7rem;
-      padding: 4px 8px;
-      border-radius: 999px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .product-card img {
-      width: 100%;
-      border-radius: 10px;
-      object-fit: cover;
-    }
-
-    .product-body {
-      padding: 12px 14px 14px;
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-    }
-
-    .product-name {
-      font-size: 0.98rem;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-
-    .product-meta {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      margin-bottom: 6px;
-    }
-
-    .product-price {
-      font-weight: 700;
-      color: var(--accent-strong);
-      margin-bottom: 8px;
-      font-size: 0.96rem;
-    }
-
-    .product-desc {
-      font-size: 0.82rem;
-      color: var(--text-muted);
       margin-bottom: 10px;
-      flex: 1;
+      color: #7a3fc4;
     }
 
-    .product-more {
-      display: none;
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      margin-bottom: 8px;
+    p {
+      font-size: 1rem;
+      color: #553b65;
+      margin-bottom: 24px;
     }
 
-    .product-actions {
-      display: flex;
-      gap: 8px;
-      margin-top: 4px;
-    }
-
-    .btn {
-      flex: 1;
-      text-align: center;
-      padding: 8px 10px;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      cursor: pointer;
-      font-size: 0.82rem;
-      font-weight: 600;
-      white-space: nowrap;
-    }
-
-    .btn-secondary {
-      background: white;
-      border-color: var(--border-soft);
-      color: var(--accent-strong);
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: white;
-    }
-
-    .btn-primary:hover {
-      background: var(--accent-strong);
-    }
-
-    .btn-secondary:hover {
-      background: #f5f0ff;
-    }
-
-    /* Checkout & contact sections */
-
-    .section-heading {
-      margin: 40px 0 12px;
-      font-size: 1.4rem;
-    }
-
-    section#checkout,
-    section#contact {
-      max-width: 720px;
-      margin: 0 auto 40px;
-    }
-
-    form {
-      padding: 18px 16px;
-      border-radius: 12px;
-      background: #faf8ff;
-      border: 1px solid var(--border-soft);
-    }
-
-    form h3 {
-      margin-top: 0;
-      margin-bottom: 12px;
-      font-size: 1.1rem;
-    }
-
-    label {
-      display: block;
-      margin: 10px 0 4px;
-      font-size: 0.85rem;
-      font-weight: 600;
-    }
-
-    input,
-    select,
-    textarea {
+    input, button {
       width: 100%;
-      padding: 8px 10px;
-      border-radius: 8px;
-      border: 1px solid #d6c8f0;
-      font-size: 0.86rem;
-      font-family: inherit;
-    }
-
-    textarea {
-      resize: vertical;
-    }
-
-    .total-line {
-      margin-top: 10px;
-      font-weight: 700;
-      color: var(--text-main);
-      font-size: 0.9rem;
-    }
-
-    .note {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      margin-top: 4px;
-    }
-
-    .submit-btn {
-      margin-top: 14px;
       padding: 10px 12px;
-      background: var(--accent);
-      color: #ffffff;
+      border-radius: 8px;
       border: none;
-      border-radius: 999px;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 0.9rem;
-      width: 100%;
+      font-size: 0.95rem;
+      margin-top: 10px;
     }
 
-    .submit-btn:hover {
-      background: var(--accent-strong);
+    input {
+      border: 1px solid #c9a8ff;
+      background: #ffffff;
+    }
+
+    button {
+      background: #b574ff;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      background: #8b46d4;
     }
 
     .success {
-      margin-top: 8px;
-      font-size: 0.84rem;
+      margin-top: 12px;
+      font-size: 0.9rem;
       color: #2f855a;
       font-weight: 600;
     }
 
     footer {
+      position: fixed;
+      bottom: 12px;
+      width: 100%;
       text-align: center;
-      padding: 16px 20px;
-      background: #f8f1ff;
       font-size: 0.8rem;
-      color: var(--text-muted);
-      border-top: 1px solid #eee;
-    }
-
-    @media (max-width: 900px) {
-      .products-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 640px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-      }
-      .nav-links {
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-      }
-      .products-grid {
-        grid-template-columns: 1fr;
-      }
-      .toolbar {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+      color: #6d5880;
     }
   </style>
 </head>
+
 <body>
 
-<div class="top-banner">
-  Free shipping on qualifying EU orders · Gelivra – At-home salon quality gel nails
-</div>
+  <div class="container">
+    <img src="logo.png" alt="Gelivra Logo" class="logo">
 
-<header>
-  <!-- Make sure logo.png is in the same folder as this file -->
-  <img src="logo.png" alt="Gelivra Logo">
-  <nav class="nav-links">
-    <a href="#products">Gel Nail Kits</a>
-    <a href="#checkout">Checkout</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+    <h1>New Collection Coming Soon ✨</h1>
+    <p>We’re getting ready to launch brand-new gel nail kits with fresh designs, better quality, and fast EU delivery.</p>
 
-<main>
-  <div class="breadcrumb">
-    Home / <span>Gel Nail Kits</span>
+    <input id="email" placeholder="Enter your email to get notified">
+    <button onclick="notify()">Notify Me</button>
+
+    <div id="message" class="success"></div>
   </div>
 
-  <div class="collection-header">
-    <h1 class="collection-title">Gel Nail Kits</h1>
-    <p class="collection-subtitle">
-      Curated Gelivra kits for glossy, long-lasting gel nails at home. Choose a starter kit, colour collection, or builder gel add-on – all designed for EU customers with easy delivery.
-    </p>
-  </div>
+  <footer>
+    © 2026 Gelivra. All rights reserved.
+  </footer>
 
-  <div class="toolbar">
-    <div class="toolbar-left">
-      <div class="filter-pill">
-        <span class="filter-dot"></span>
-        Filters (coming soon)
-      </div>
-      <span style="font-size:0.8rem;color:var(--text-muted);">3 products</span>
-    </div>
-    <div class="toolbar-right">
-      <label for="sort" style="margin-right:4px;">Sort by</label>
-      <select id="sort">
-        <option>Featured</option>
-        <option>Price, low to high</option>
-        <option>Price, high to low</option>
-      </select>
-    </div>
-  </div>
-
-  <section id="products" class="products-grid">
-    <!-- Product 1 -->
-    <article class="product-card">
-      <div class="product-image-wrapper">
-        <span class="badge">Starter kit</span>
-        <img src="https://ae01.alicdn.com/kf/4000276970860/120W-LED-Gel-Nail-Polish-Kit.jpg"
-             alt="120W LED Gel Polish + Tools Kit">
-      </div>
-      <div class="product-body">
-        <div class="product-name">120W LED Gel Polish + Tools Kit</div>
-        <div class="product-meta">Perfect first-time kit · At-home salon results</div>
-        <div class="product-price">From €39.99</div>
-        <p class="product-desc">
-          Powerful 120W LED lamp, multiple gel colours and essential tools – everything you need for long-lasting gel manicures at home.
-        </p>
-        <div class="product-more">
-          • Beginner-friendly with clear layout<br>
-          • Cures quickly under LED light<br>
-          • Ideal as a main starter kit or gift
-        </div>
-        <div class="product-actions">
-          <button class="btn btn-secondary" onclick="toggleMore(this)">Learn more</button>
-          <button class="btn btn-primary" onclick="startCheckout('120W LED Gel Polish + Tools Kit')">Buy now</button>
-        </div>
-      </div>
-    </article>
-
-    <!-- Product 2 -->
-    <article class="product-card">
-      <div class="product-image-wrapper">
-        <span class="badge">Colour set</span>
-        <img src="https://ae01.alicdn.com/kf/33025109239/Color-Gel-UV-LED-Lamp-Set.jpg"
-             alt="Color Gel + UV/LED Lamp Set">
-      </div>
-      <div class="product-body">
-        <div class="product-name">Color Gel + UV/LED Lamp Set</div>
-        <div class="product-meta">For mani/pedi lovers · Multi-shade collection</div>
-        <div class="product-price">From €49.99</div>
-        <p class="product-desc">
-          A versatile gel colour collection with UV/LED lamp – ideal if you love changing shades and doing salon-style manicures at home.
-        </p>
-        <div class="product-more">
-          • Mix of neutrals and statement shades<br>
-          • Great balance of value & variety<br>
-          • Pairs well with our builder gel kit
-        </div>
-        <div class="product-actions">
-          <button class="btn btn-secondary" onclick="toggleMore(this)">Learn more</button>
-          <button class="btn btn-primary" onclick="startCheckout('Color Gel + UV/LED Lamp Set')">Buy now</button>
-        </div>
-      </div>
-    </article>
-
-    <!-- Product 3 -->
-    <article class="product-card">
-      <div class="product-image-wrapper">
-        <span class="badge">Add-on</span>
-        <img src="https://ae01.alicdn.com/kf/1005002022060318/Poly-UV-Gel-Kit.jpg"
-             alt="Poly UV Gel Kit">
-      </div>
-      <div class="product-body">
-        <div class="product-name">Poly UV Gel Kit (Builder/Extension)</div>
-        <div class="product-meta">Stronger extensions · Works with LED/UV lamps</div>
-        <div class="product-price">From €19.99</div>
-        <p class="product-desc">
-          Builder gel kit for extensions and overlays. Use alongside a Gelivra lamp kit to create stronger, longer-lasting manicures.
-        </p>
-        <div class="product-more">
-          • Ideal as a second purchase / upsell<br>
-          • Great for refills and repairs<br>
-          • Compatible with standard gel systems
-        </div>
-        <div class="product-actions">
-          <button class="btn btn-secondary" onclick="toggleMore(this)">Learn more</button>
-          <button class="btn btn-primary" onclick="startCheckout('Poly UV Gel Kit')">Buy now</button>
-        </div>
-      </div>
-    </article>
-  </section>
-
-  <h2 class="section-heading" id="checkout">Checkout</h2>
-  <section id="checkout">
-    <form id="checkoutForm">
-      <h3>Secure Checkout</h3>
-
-      <label>Selected product</label>
-      <input type="text" id="selectedProduct" readonly placeholder="Choose a product above">
-
-      <label for="country">Delivery country</label>
-      <select id="country" required>
-        <option value="Ireland">Ireland</option>
-        <option value="Germany">Germany</option>
-        <option value="France">France</option>
-        <option value="Spain">Spain</option>
-        <option value="UK">United Kingdom</option>
-        <option value="Other">Other EU / International</option>
-      </select>
-
-      <label for="name">Full name</label>
-      <input type="text" id="name" required>
-
-      <label for="email">Email address</label>
-      <input type="email" id="email" required>
-
-      <label for="address">Full delivery address</label>
-      <textarea id="address" rows="3" required></textarea>
-
-      <label for="notes">Order notes (optional)</label>
-      <textarea id="notes" rows="2" placeholder="Anything we should know? (e.g. safe place, access codes)"></textarea>
-
-      <div class="total-line" id="totalLine">Total: €0.00</div>
-      <div class="note">
-        Prices include product + estimated shipping from our EU partner warehouse.
-        Final shipping method may vary slightly depending on your exact location.
-      </div>
-
-      <button type="submit" class="submit-btn">Confirm order details</button>
-      <div id="checkoutMessage" class="success"></div>
-    </form>
-  </section>
-
-  <h2 class="section-heading" id="contact">Contact</h2>
-  <section id="contact">
-    <form id="contactForm">
-      <h3>Contact Gelivra</h3>
-      <label for="contactName">Your name</label>
-      <input type="text" id="contactName" required>
-      <label for="contactEmail">Your email</label>
-      <input type="email" id="contactEmail" required>
-      <label for="contactMessage">Message</label>
-      <textarea id="contactMessage" rows="4" required></textarea>
-      <button type="submit" class="submit-btn">Send message</button>
-      <div id="contactMessageOut" class="success"></div>
-    </form>
-  </section>
-</main>
-
-<footer>
-  © 2026 Gelivra. All rights reserved.
-</footer>
-
-<script>
-  // Base product prices (in EUR)
-  const productPrices = {
-    "120W LED Gel Polish + Tools Kit": 39.99,
-    "Color Gel + UV/LED Lamp Set": 49.99,
-    "Poly UV Gel Kit": 19.99
-  };
-
-  // Shipping cost by country (approx – you can edit these)
-  const shippingCosts = {
-    "Ireland": 5.49,
-    "Germany": 3.99,
-    "France": 3.99,
-    "Spain": 4.49,
-    "UK": 4.29,
-    "Other": 6.49
-  };
-
-  function toggleMore(button) {
-    const card = button.closest('.product-card');
-    const more = card.querySelector('.product-more');
-    const isVisible = more.style.display === 'block';
-    more.style.display = isVisible ? 'none' : 'block';
-    button.textContent = isVisible ? 'Learn more' : 'Show less';
-  }
-
-  function startCheckout(productName) {
-    const selectedInput = document.getElementById('selectedProduct');
-    selectedInput.value = productName;
-    updateTotal();
-    document.getElementById('checkout').scrollIntoView({ behavior: 'smooth' });
-  }
-
-  function updateTotal() {
-    const productName = document.getElementById('selectedProduct').value;
-    const country = document.getElementById('country').value;
-    if (!productName) {
-      document.getElementById('totalLine').textContent = 'Total: €0.00';
-      return;
+  <script>
+    function notify() {
+      const email = document.getElementById('email').value.trim();
+      if (!email) return;
+      document.getElementById('message').innerText =
+        "Thanks! We'll notify you as soon as we launch.";
+      document.getElementById('email').value = '';
     }
-    const basePrice = productPrices[productName] || 0;
-    const shipping = shippingCosts[country] ?? shippingCosts["Other"];
-    const total = basePrice + shipping;
-    document.getElementById('totalLine').textContent =
-      `Total: €${total.toFixed(2)} (includes €${shipping.toFixed(2)} shipping)`;
-  }
+  </script>
 
-  document.getElementById('country').addEventListener('change', updateTotal);
-
-  document.getElementById('checkoutForm').addEventListener('submit', function (e) {
-    e.preventDefault();
-    const product = document.getElementById('selectedProduct').value;
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const address = document.getElementById('address').value.trim();
-    if (!product || !name || !email || !address) return;
-
-    document.getElementById('checkoutMessage').textContent =
-      'Thanks, ' + name + '! Your order details 
-
+</body>
+</html>
