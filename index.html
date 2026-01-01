@@ -1,46 +1,4 @@
- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gelivra – Gel Nail Kits</title>
-  <style>
-    :root {
-      --accent: #b574ff;
-      --accent-soft: #f5e7ff;
-      --accent-strong: #8b46d4;
-      --bg-soft: #fff7ff;
-      --border-soft: #ece3fa;
-      --text-main: #222222;
-      --text-muted: #666666;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        Helvetica, Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #ffffff;
-      color: var(--text-main);
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    header {
-      background: white;
-      border-bottom: 1px solid #eee;
-      padding: 12px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: sticky;
+sticky;
       top: 0;
       z-index: 20;
     }
@@ -638,19 +596,5 @@
     if (!product || !name || !email || !address) return;
 
     document.getElementById('checkoutMessage').textContent =
-      'Thanks, ' + name + '! Your order details have been submitted. We will email you with payment and tracking info shortly.';
-    this.reset();
-    document.getElementById('selectedProduct').value = '';
-    updateTotal();
-  });
+      'Thanks, ' + name + '! Your order details 
 
-  document.getElementById('contactForm').addEventListener('submit', function (e) {
-    e.preventDefault();
-    document.getElementById('contactMessageOut').textContent =
-      'Thanks for your message! We will get back to you as soon as possible.';
-    this.reset();
-  });
-</script>
-
-</body>
-</html>
